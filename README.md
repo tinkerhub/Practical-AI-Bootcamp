@@ -15,7 +15,7 @@ Practical AI Bootcamp by [TinkerHub Foundation](https://tinkerhub.org). Here you
 - Should know OOP and python
 - Should know git and github
 - Should know basic machine learning (different categories of ML, what is training ? What is testing ? What is dataset..etc)
-- All the resources to get you started with the program is given in the [resources folder]()https://github.com/tinkerhub-org/Practical-AI-Bootcamp/tree/main/Resources. You can learn it and finish the task for joining the program!
+- All the resources to get you started with the program is given in the [resources folder](https://github.com/tinkerhub-org/Practical-AI-Bootcamp/tree/main/Resources). You can learn it and finish the task for joining the program!
 
 ## Join the program
 
