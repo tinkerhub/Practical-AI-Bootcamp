@@ -1,6 +1,6 @@
 # Practical AI Bootcamp
 
-Practical AI Bootcamp by [TinkerHub Foundation](https://tinkerhub.org). Here you will learn how to build AI products. This learning program cover the following.
+Practical AI Bootcamp by [TinkerHub Foundation](https://tinkerhub.org). Here you will learn how to build good AI products. This learning program cover the following.
 
 1. Finding the right machine learning model for a problem
 2. Building responsible AI - Bias and other issues
