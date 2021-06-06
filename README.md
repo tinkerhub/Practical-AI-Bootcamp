@@ -89,9 +89,8 @@ On device machine learning
 
 1. Techniques to make models small
 2. iOS coreML
-3. tensorflow lite
-4. pytorch quantisation
-5. tensorflow for swift
+3. TensorFlow lite
+4. PyTorch quantisation
 
 ## Day 8
 Some tools and tricks
