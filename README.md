@@ -9,6 +9,7 @@ Practical AI Bootcamp by [TinkerHub Foundation](https://tinkerhub.org). Here you
 5. Speed and performance
 6. Wraping and hosting machine learning models
 7. On device machine learning
+8. Some tools and tricks
 
 ## Participants criteria
 
