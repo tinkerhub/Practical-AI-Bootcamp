@@ -57,7 +57,6 @@ Dataset and performance
 1. Data prep
 2. Data reading
 3. Data Augumentation
-4. 
 
 ### Day 4
 Techniques in training AI models
