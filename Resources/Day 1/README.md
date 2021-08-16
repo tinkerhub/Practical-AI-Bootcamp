@@ -57,9 +57,12 @@ A rule of thumb I use is to try basic machine learning algorithms before jumping
 - Machine learning need only limited but structured data
 - Mostly used for tabular data
 - Non-tabular data need feature engineering
+- Whitebox models - better interpretability
 ## Deep learning
 - Deep learning need more data
 - Can accomodate unstructured data
 - Need more computation power
 - Deployment might also need GPU systems
+- Blacbox models - less interpretable
+- Better accuracy compared to ML models
 
