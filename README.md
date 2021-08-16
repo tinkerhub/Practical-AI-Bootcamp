@@ -41,7 +41,6 @@ Finding the right machine learning model for a problem
 1. Should I use machine learning for this problem ?
 2. What kind of ML task is this ?
 3. Machine learning or deep learning ?
-4. What model(s) ?
 
 ### Day 2
 Building responsible AI - Bias and other issues
@@ -54,14 +53,13 @@ Building responsible AI - Bias and other issues
 
 ### Day 3
 
-How to train a good machine learning model - how to tune hyperparams
+Techniques in training AI models
 
-1. Finding the right model
-2. Dataset - quanity, augumentation, ...etc
-3. How to find the right learning rate ?
-4. Activation functions
-5. Adding layers
-6. Epochs and early stop
+1. Dataset - quantity, breaking the data
+2. How to find the right learning rate ?
+3. Effect of batch size
+4. Epochs and early stop
+5. Tools to automate params tuning
 
 ### Day 4
 
@@ -70,37 +68,34 @@ Transfer learning where when and how to use
 ### Day 5
 Speed and performance
 
-1. GPU starvation
-2. Data prep
-3. Data reading
-4. Data Augumentation
-5. Training
-6. Inference
+1. Data prep
+2. Data reading
+3. Data Augumentation
+4. Training
+5. Inference
 
 ### Day 6
 Wraping and hosting machine learning models
 
 1. Building a micro service
 2. Making the model as an API
-3. Hosting
+3. Hosting and serving
 
 ### Day 7
 On device machine learning
 
 1. Techniques to make models small
-2. iOS coreML
-3. TensorFlow lite
-4. PyTorch quantisation
+2. TensorFlow lite
+3. PyTorch quantisation
 
 ### Day 8
 Some tools and tricks
 
 1. Installation
-2. Training
-3. Model
-4. Data
-5. Privacy
-6. Cloud APIs and frameworks
+2. Finding models
+3. Data
+4. Privacy
+5. Cloud APIs and frameworks
 
 ## Projects
 You and your fellow teammates will be doing a project based on what you learnt through out the bootcamp
