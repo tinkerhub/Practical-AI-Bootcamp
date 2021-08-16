@@ -51,5 +51,15 @@ Learns from situations by reinforcing favourable situations.
 - [Rubiks cube solving robot](https://openai.com/blog/solving-rubiks-cube/)
 - [cool data centres](https://deepmind.com/blog/article/safety-first-ai-autonomous-data-centre-cooling-and-industrial-control)
 
-
+# Machine learning or deep learning
+A rule of thumb I use is to try basic machine learning algorithms before jumping to deep learning
+## Machine learning
+- Machine learning need only limited but structured data
+- Mostly used for tabular data
+- Non-tabular data need feature engineering
+## Deep learning
+- Deep learning need more data
+- Can accomodate unstructured data
+- Need more computation power
+- Deployment might also need GPU systems
 
