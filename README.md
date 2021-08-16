@@ -52,27 +52,23 @@ Building responsible AI - Bias and other issues
 5. Privacy
 
 ### Day 3
-
-Techniques in training AI models
-
-1. Dataset - quantity, breaking the data
-2. How to find the right learning rate ?
-3. Effect of batch size
-4. Epochs and early stop
-5. Tools to automate params tuning
-
-### Day 4
-
-Transfer learning where when and how to use
-
-### Day 5
-Speed and performance
+Dataset and performance 
 
 1. Data prep
 2. Data reading
 3. Data Augumentation
-4. Training
-5. Inference
+4. 
+
+### Day 4
+Techniques in training AI models
+
+1. How to find the right learning rate ?
+2. Effect of batch size
+3. Epochs and early stop
+
+### Day 5
+Transfer learning where when and how to use
+
 
 ### Day 6
 Wraping and hosting machine learning models
