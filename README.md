@@ -35,14 +35,14 @@ We will let you know if you are selected
 ## Program schedule
 This is a 2 week Bootcamp. There will be 1 hour sessions every Monday, Wednesday, Friday and Sunday. There will be tasks to do every other days. 
 
-### Day 1
+### Day 1 (Aug 18)
 Finding the right machine learning model for a problem
 
 1. Should I use machine learning for this problem ?
 2. What kind of ML task is this ?
 3. Machine learning or deep learning ?
 
-### Day 2
+### Day 2 (Aug 19)
 Building responsible AI - Bias and other issues
 
 1. Bias
@@ -51,39 +51,39 @@ Building responsible AI - Bias and other issues
 4. Robustness
 5. Privacy
 
-### Day 3
+### Day 3 (Aug 23)
 Dataset and performance 
 
 1. Data prep
 2. Data reading
 3. Data Augumentation
 
-### Day 4
+### Day 4 (Aug 25)
 Techniques in training AI models
 
 1. How to find the right learning rate ?
 2. Effect of batch size
 3. Epochs and early stop
 
-### Day 5
+### Day 5 (Aug 27)
 Transfer learning where when and how to use
 
 
-### Day 6
+### Day 6 (Aug 29)
 Wraping and hosting machine learning models
 
 1. Building a micro service
 2. Making the model as an API
 3. Hosting and serving
 
-### Day 7
+### Day 7 (Aug 31)
 On device machine learning
 
 1. Techniques to make models small
 2. TensorFlow lite
 3. PyTorch quantisation
 
-### Day 8
+### Day 8 (Sep 02)
 Some tools and tricks
 
 1. Installation
@@ -92,6 +92,6 @@ Some tools and tricks
 4. Privacy
 5. Cloud APIs and frameworks
 
-## Projects
+## Projects (Sep 03 to Sep 09)
 You and your fellow teammates will be doing a project based on what you learnt through out the bootcamp
 
