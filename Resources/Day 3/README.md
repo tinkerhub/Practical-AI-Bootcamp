@@ -21,10 +21,10 @@ print(tfds.list_builders())
 dataloader = tfds.load("cifar10", as_supervised=True)
 train, test = dataloader["train"], dataloader["test"]
 
-
 ```
 
 ### Pytorch example
+[Datasets available in torchvision](https://pytorch.org/vision/stable/datasets.html)
 
 ```python
 import torch
@@ -54,4 +54,19 @@ test_data = datasets.FashionMNIST(
 - Using tf.data or torch.utils.data
 
 ### Use packages like pandas
+
+```python
+import pandas as pd
+from sklearn.model_selection import train_test_split
+df = pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data", header=None)
+df.head()
+
+"""
+for index, row in df.iterrows():
+    print(row[0], row[4])
+"""    
+
+train, test = train_test_split(df_text_genre, test_size=0.2, random_state=42, shuffle=True)
+```
+- [You can load pandas dataframe to tensorflow](https://www.tensorflow.org/tutorials/load_data/pandas_dataframe)
 
