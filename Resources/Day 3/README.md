@@ -129,9 +129,9 @@ label = train_labels[0]
 plt.imshow(img, cmap="gray")
 plt.show()
 print(f"Label: {label}")
-
-- [Find more on torch.utils.data here](https://pytorch.org/docs/stable/data.html)
 ```
+- [Find more on torch.utils.data here](https://pytorch.org/docs/stable/data.html)
+
 
 ## Data Augumentation
 You can apply data augumentation techniques on the input pipelines
