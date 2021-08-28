@@ -115,3 +115,29 @@ axs.axvline(x=lr_finder.get_best_lr(sma=20), c='r', linestyle='-.')
 
 ![learning rate](https://github.com/tinkerhub/Practical-AI-Bootcamp/blob/main/Resources/Day%204/Screenshot%202021-08-28%20at%206.06.37%20PM.png)
 
+
+# Effect of batch size
+1. Too large of a batch size will lead to poor generalization
+2. Smaller batch size allows model to start learning before having to see the entire data
+
+# Epochs and early stop 
+
+- During training, weights in the neural networks are updated so that the model performs better on the training data.
+- For a while, improvements on the training set correlate positively with improvements on the test set.
+- However, there comes a point where you begin to overfit on the training data and further "improvements" will result in lower generalization performance.
+- Early stopping is a technique used to terminate the training before overfitting occurs.
+
+```python
+from tensorflow.keras.callbacks import EarlyStopping
+
+earlystop_callback = EarlyStopping(
+  monitor='val_accuracy', min_delta=0.0001)
+```
+
+When you do the `model.fit()` pass `earlystop_callback` as param 
+
+```python
+model.fit(padded, training_labels_final, epochs=num_epochs, validation_data=(testing_padded, testing_labels_final), callbacks=[earlystop_callback])
+model.evaluate(testing_padded)
+```
+
