@@ -118,6 +118,15 @@ axs.axvline(x=lr_finder.get_best_lr(sma=20), c='r', linestyle='-.')
 ![learning rate](https://github.com/tinkerhub/Practical-AI-Bootcamp/blob/main/Resources/Day%204/Screenshot%202021-08-28%20at%209.04.15%20PM.png)
 
 
+Lets get the best learning rate and set it as model learning rate
+
+```python
+best_lr = lr_finder.get_best_lr(sma=20)
+K.set_value(model.optimizer.lr, best_lr)
+print(model.optmizer.lr)
+```
+
+
 # Effect of batch size
 1. Too large of a batch size will lead to poor generalization
 2. Smaller batch size allows model to start learning before having to see the entire data
