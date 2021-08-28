@@ -137,6 +137,11 @@ model = tf.keras.Sequential([
 model.compile(loss='binary_crossentropy',
               optimizer='adam', metrics=['accuracy'])
 
+BATCH = 32
+
+train_ds = tf.data.Dataset.from_tensor_slices((padded, training_labels_final))
+train_ds = train_ds.batch(BATCH)
+
 lr_finder = LRFinder(model)
 STEPS_PER_EPOCH = np.ceil(len(train_data) / BATCH)
 lr_finder.find(train_data, start_lr=1e-6, end_lr=1, epochs=5,
