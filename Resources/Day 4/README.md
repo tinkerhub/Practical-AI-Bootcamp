@@ -90,9 +90,11 @@ Find learning rate
 
 ```python
 BATCH = 512
+train_ds = tf.data.Dataset.from_tensor_slices((padded, training_labels_final))
+train_ds = train_ds.batch(BATCH)
 STEPS_PER_EPOCH = np.ceil(len(train_data) / BATCH)
 lr_finder = LRFinder(model)
-lr_finder.find(train_data, start_lr=1e-6, end_lr=1, epochs=5,
+lr_finder.find(train_ds, start_lr=1e-6, end_lr=1, epochs=5,
                steps_per_epoch=STEPS_PER_EPOCH)
                
 learning_rates = lr_finder.get_learning_rates()
