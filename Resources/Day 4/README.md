@@ -115,7 +115,7 @@ axs.axvline(x=lr_finder.get_best_lr(sma=20), c='r', linestyle='-.')
 
 ## The plot looks like this
 
-![learning rate](https://github.com/tinkerhub/Practical-AI-Bootcamp/blob/main/Resources/Day%204/Screenshot%202021-08-28%20at%206.06.37%20PM.png)
+![learning rate](https://github.com/tinkerhub/Practical-AI-Bootcamp/blob/main/Resources/Day%204/Screenshot%202021-08-28%20at%209.04.15%20PM.png)
 
 
 # Effect of batch size
