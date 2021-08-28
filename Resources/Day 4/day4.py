@@ -150,6 +150,7 @@ learning_rates = lr_finder.get_learning_rates()
 losses = lr_finder.get_losses()
 
 
+
 def plot_loss(learning_rates, losses, n_skip_beginning=10, n_skip_end=5, x_scale='log'):
     f, ax = plt.subplots()
     ax.set_ylabel("loss")
@@ -162,6 +163,10 @@ def plot_loss(learning_rates, losses, n_skip_beginning=10, n_skip_end=5, x_scale
 
 axs = plot_loss()
 axs.axvline(x=lr_finder.get_best_lr(sma=20), c='r', linestyle='-.')
+
+best_lr = lr_finder.get_best_lr(sma=20)
+K.set_value(model.optimizer.lr, best_lr)
+print(model.optmizer.lr)
 
 earlystop_callback = EarlyStopping(
     monitor='val_accuracy', min_delta=0.0001)
