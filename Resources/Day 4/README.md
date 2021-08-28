@@ -131,7 +131,7 @@ axs.axvline(x=lr_finder.get_best_lr(sma=20), c='r', linestyle='-.')
 from tensorflow.keras.callbacks import EarlyStopping
 
 earlystop_callback = EarlyStopping(
-  monitor='val_accuracy', min_delta=0.0001)
+  monitor='val_accuracy', min_delta=0.0001, patiece=1)
 ```
 
 When you do the `model.fit()` pass `earlystop_callback` as param 
