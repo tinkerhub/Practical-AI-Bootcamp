@@ -16,7 +16,7 @@
 
 1. Start with a low learning rate and gradually increase it until reaching a prespecified max value.
 2. At each lr obeserve the loss. At first it will be stagnent then at some point it drop and then eventually go back up
-3. Calculate the rate if decrease at each learning rate
+3. Calculate the rate of loss decrease at each learning rate
 4. Select the point with the highest rate of decrease.
 
 [Here is an example of how to do this](https://github.com/beringresearch/lrfinder/tree/master/examples)
