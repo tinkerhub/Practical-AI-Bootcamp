@@ -29,7 +29,7 @@ from tensorflow_datasets import tfds
 import numpy as np
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-from keras_lr_finder import LRFinder
+from lrfinder import LRFinder
 ```
 
 Loading dataset
@@ -84,15 +84,32 @@ model = tf.keras.Sequential([
     tf.keras.layers.Dense(1, activation='sigmoid')
 ])
 model.compile(loss='binary_crossentropy',optimizer='adam',metrics=['accuracy'])
-model.summary()
-
 ```
+
 Find learning rate
 
 ```python
+BATCH = 512
+STEPS_PER_EPOCH = np.ceil(len(train_data) / BATCH)
 lr_finder = LRFinder(model)
-lr_finder.find(x_train, y_train, 0.0001, 1, 512, 5)
-lr_finder.plot_loss()
+lr_finder.find(train_data, start_lr=1e-6, end_lr=1, epochs=5,
+               steps_per_epoch=STEPS_PER_EPOCH)
+               
+learning_rates = lr_finder.get_learning_rates()
+losses = lr_finder.get_losses()
+
+def plot_loss(learning_rates, losses, n_skip_beginning=10, n_skip_end=5, x_scale='log'):
+    f, ax = plt.subplots()
+    ax.set_ylabel("loss")
+    ax.set_xlabel("learning rate (log scale)")
+    ax.plot(learning_rates[n_skip_beginning:-n_skip_end],
+            losses[n_skip_beginning:-n_skip_end])
+    ax.set_xscale(x_scale)
+    return(ax)
+
+axs = plot_loss()
+axs.axvline(x=lr_finder.get_best_lr(sma=20), c='r', linestyle='-.')
 ```
+
 
 
