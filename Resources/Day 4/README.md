@@ -19,7 +19,7 @@
 3. Calculate the rate if decrease at each learning rate
 4. Select the point with the highest rate of decrease.
 
-[Here is an example of how to do this](https://github.com/surmenok/keras_lr_finder/blob/master/examples/Example.ipynb)
+[Here is an example of how to do this](https://github.com/beringresearch/lrfinder/tree/master/examples)
 
 Import packages
 
