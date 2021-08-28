@@ -29,6 +29,7 @@ from tensorflow_datasets import tfds
 import numpy as np
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+from keras_lr_finder import LRFinder
 ```
 
 Loading dataset
