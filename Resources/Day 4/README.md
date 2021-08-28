@@ -111,5 +111,7 @@ axs = plot_loss()
 axs.axvline(x=lr_finder.get_best_lr(sma=20), c='r', linestyle='-.')
 ```
 
+## The plot looks like this
+
 
 
