@@ -17,3 +17,7 @@ file_paths = [
 
 dataset = tf.data.TextLineDataset(file_paths)
 ```
+
+## Day 5
+
+Apply `Earlystopping` for the model we trained in last session with monitor validation loss and patience 3
