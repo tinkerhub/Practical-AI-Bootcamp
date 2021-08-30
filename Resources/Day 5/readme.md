@@ -10,7 +10,7 @@
 
 ## What is Transfer Learning
 
-Storing the knowledge gained while storing one problem and applying it to a different but related problem.
+Storing the knowledge gained while solving one problem and applying it to a different but related problem.
 
 ## What we can do
 
@@ -52,7 +52,7 @@ _Thumb Rule: just Re-train the last layer , ie output layer (one/two)_
 ## How to use
 
 
-_Model fitting_
+_Model building_
 ~~~python
 from keras.applications.resnet50 import ResNet50
 from keras.layers import GlobalAveragePooling2D, Dense
@@ -102,7 +102,7 @@ model.fit_generator(train_flow, epochs = 5, validation_data = valid_flow)
 ## Best Practices
 
 - Take Advantage of Pre-trained models
-- compatiable
+- compatible
 - Large Dataset doesnot need TL
 - overfitting
 
