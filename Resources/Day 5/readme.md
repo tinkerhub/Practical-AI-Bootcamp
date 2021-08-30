@@ -52,7 +52,7 @@ _Thumb Rule: just Re-train the last layer , ie output layer (one/two)_
 ## How to use
 
 
-_Model fitting_
+_Model building_
 ~~~python
 from keras.applications.resnet50 import ResNet50
 from keras.layers import GlobalAveragePooling2D, Dense
