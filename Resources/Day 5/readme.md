@@ -102,7 +102,7 @@ model.fit_generator(train_flow, epochs = 5, validation_data = valid_flow)
 ## Best Practices
 
 - Take Advantage of Pre-trained models
-- compatiable
+- compatible
 - Large Dataset doesnot need TL
 - overfitting
 
