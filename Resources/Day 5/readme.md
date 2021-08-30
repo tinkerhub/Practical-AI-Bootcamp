@@ -10,7 +10,7 @@
 
 ## What is Transfer Learning
 
-Storing the knowledge gained while storing one problem and applying it to a different but related problem.
+Storing the knowledge gained while solving one problem and applying it to a different but related problem.
 
 ## What we can do
 
