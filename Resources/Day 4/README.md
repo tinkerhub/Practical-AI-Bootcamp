@@ -16,7 +16,7 @@
 
 1. Start with a low learning rate and gradually increase it until reaching a prespecified max value.
 2. At each lr obeserve the loss. At first it will be stagnent then at some point it drop and then eventually go back up
-3. Calculate the rate if decrease at each learning rate
+3. Calculate the rate of loss decrease at each learning rate
 4. Select the point with the highest rate of decrease.
 
 [Here is an example of how to do this](https://github.com/beringresearch/lrfinder/tree/master/examples)
@@ -90,9 +90,11 @@ Find learning rate
 
 ```python
 BATCH = 512
+train_ds = tf.data.Dataset.from_tensor_slices((padded, training_labels_final))
+train_ds = train_ds.batch(BATCH)
 STEPS_PER_EPOCH = np.ceil(len(train_data) / BATCH)
 lr_finder = LRFinder(model)
-lr_finder.find(train_data, start_lr=1e-6, end_lr=1, epochs=5,
+lr_finder.find(train_ds, start_lr=1e-6, end_lr=1, epochs=5,
                steps_per_epoch=STEPS_PER_EPOCH)
                
 learning_rates = lr_finder.get_learning_rates()
@@ -113,7 +115,16 @@ axs.axvline(x=lr_finder.get_best_lr(sma=20), c='r', linestyle='-.')
 
 ## The plot looks like this
 
-![learning rate](https://github.com/tinkerhub/Practical-AI-Bootcamp/blob/main/Resources/Day%204/Screenshot%202021-08-28%20at%206.06.37%20PM.png)
+![learning rate](https://github.com/tinkerhub/Practical-AI-Bootcamp/blob/main/Resources/Day%204/Screenshot%202021-08-28%20at%209.04.15%20PM.png)
+
+
+Lets get the best learning rate and set it as model learning rate
+
+```python
+best_lr = lr_finder.get_best_lr(sma=20)
+K.set_value(model.optimizer.lr, best_lr)
+print(model.optmizer.lr)
+```
 
 
 # Effect of batch size

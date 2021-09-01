@@ -137,12 +137,18 @@ model = tf.keras.Sequential([
 model.compile(loss='binary_crossentropy',
               optimizer='adam', metrics=['accuracy'])
 
+BATCH = 32
+
+train_ds = tf.data.Dataset.from_tensor_slices((padded, training_labels_final))
+train_ds = train_ds.batch(BATCH)
+
 lr_finder = LRFinder(model)
 STEPS_PER_EPOCH = np.ceil(len(train_data) / BATCH)
 lr_finder.find(train_data, start_lr=1e-6, end_lr=1, epochs=5,
                steps_per_epoch=STEPS_PER_EPOCH)
 learning_rates = lr_finder.get_learning_rates()
 losses = lr_finder.get_losses()
+
 
 
 def plot_loss(learning_rates, losses, n_skip_beginning=10, n_skip_end=5, x_scale='log'):
@@ -157,6 +163,10 @@ def plot_loss(learning_rates, losses, n_skip_beginning=10, n_skip_end=5, x_scale
 
 axs = plot_loss()
 axs.axvline(x=lr_finder.get_best_lr(sma=20), c='r', linestyle='-.')
+
+best_lr = lr_finder.get_best_lr(sma=20)
+K.set_value(model.optimizer.lr, best_lr)
+print(model.optmizer.lr)
 
 earlystop_callback = EarlyStopping(
     monitor='val_accuracy', min_delta=0.0001)

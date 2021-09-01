@@ -17,3 +17,12 @@ file_paths = [
 
 dataset = tf.data.TextLineDataset(file_paths)
 ```
+
+## Day 5
+
+Apply `Earlystopping` for the model we trained in last session with monitor validation loss and patience 3
+
+## Day 6
+
+Do an Analysis by using different Pre-Trained models, (_atleast 3_), to solve any classification based machine learning problem.
+
