@@ -86,7 +86,7 @@ model.compile(
 Find learning rate
 
 ```python
-BATCH = 64
+BATCH = 128
 
 lr_finder = LRFinder(model)
 STEPS_PER_EPOCH = np.ceil(len(ds_train) / BATCH)
