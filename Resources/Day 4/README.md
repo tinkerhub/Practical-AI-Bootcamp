@@ -149,4 +149,8 @@ When you do the `model.fit()` pass `earlystop_callback` as param
 model.fit(ds_train, epochs=num_epochs, validation_data=ds_test, callbacks=[earlystop_callback])
 model.evaluate(ds_test)
 ```
+Save the model for future use
 
+```python
+model.save('saved_model/model')
+```
