@@ -149,7 +149,17 @@ When you do the `model.fit()` pass `earlystop_callback` as param
 model.fit(ds_train, epochs=num_epochs, validation_data=ds_test, callbacks=[earlystop_callback])
 model.evaluate(ds_test)
 ```
-Save the model for future use
+
+What values of `min_delta` and  `patience` to use ?
+
+- If dataset doesn't contain large variations use larger patience
+- If on CPU use small patience, on GPU use large patience
+- For models like GAN it might be better to use small patience and save model checkpoints
+- Set min delta based on running few epochs and checking validation loss
+
+# Save and load models
+
+Use `model.save` for saving a full model
 
 ```python
 model.save('saved_model/model')
