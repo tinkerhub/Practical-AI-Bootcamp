@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from digiter.helpers.get_digit import get_digit
+from digiter.helpers.digiter_helper import get_digit
 
 app = Flask(__name__)
 
