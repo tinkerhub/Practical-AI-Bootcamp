@@ -1,4 +1,4 @@
-
+import os
 import tensorflow_datasets as tfds
 from tensorflow.keras.utils import to_categorical
 import tensorflow as tf
@@ -8,6 +8,7 @@ import tensorflow.keras.backend as K
 import numpy as np
 from digiter.utils.lrfinder import LRFinder
 
+MODEL_PATH = os.environ.get("MODEL_PATH")
 
 
 (ds_train, ds_test), ds_info = tfds.load(
@@ -75,4 +76,4 @@ earlystop_callback = EarlyStopping(
 
 history = model.fit(ds_train, epochs=10, validation_data=ds_test, callbacks=[earlystop_callback])
 
-model.save('saved_models/modelX')
+model.save(MODEL_PATH)
