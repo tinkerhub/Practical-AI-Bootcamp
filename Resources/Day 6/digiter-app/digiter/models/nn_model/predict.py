@@ -1,6 +1,8 @@
 import tensorflow as tf
 import numpy as np
-model = tf.keras.models.load_model('saved_models/modelX')
+import os
+MODEL_PATH = os.environ.get("MODEL_PATH")
+model = tf.keras.models.load_model(MODEL_PATH)
 
 def predict(image, model=model):
     img = tf.image.resize(image, (28, 28))
