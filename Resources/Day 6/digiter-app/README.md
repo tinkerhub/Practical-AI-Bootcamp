@@ -20,4 +20,4 @@ for loading images
 ```bash
 docker-compose exec dev python /app/digiter/models/nn_model/train.py 
 ```
-
+for training the model
