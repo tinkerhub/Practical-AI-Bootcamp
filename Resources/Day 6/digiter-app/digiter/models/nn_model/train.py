@@ -75,4 +75,4 @@ earlystop_callback = EarlyStopping(
 
 history = model.fit(ds_train, epochs=10, validation_data=ds_test, callbacks=[earlystop_callback])
 
-model.save('saved_model/model1')
+model.save('saved_models/modelX')
