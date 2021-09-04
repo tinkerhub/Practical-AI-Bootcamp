@@ -11,7 +11,7 @@ file_paths = [
 
 dataset = tf.data.TextLineDataset(file_paths)
 
-dataset_transformed_utf8 = dataset.map(lambda d : tf_text.normalize_utf8(d)).shuffle()
+dataset_transformed_utf8 = dataset.map(lambda d : tf_text.normalize_utf8(d)).shuffle(100).repeat()
 
 for line in dataset_transformed_utf8.take(5):
   print(line.numpy())
