@@ -40,3 +40,4 @@ model_int8 = torch.quantization.quantize_dynamic(
 input_fp32 = torch.randn(4, 4, 4, 4)
 res = model_int8(input_fp32)
 ```
+- [Pytorch mobile](https://pytorch.org/mobile/ios/)
