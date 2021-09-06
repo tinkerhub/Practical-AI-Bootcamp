@@ -19,6 +19,7 @@ x_train.shape
 x_test=x_test/255.0
 x_test.shape
 
+# loading resnet file model
 resnet = ResNet50(weights ='imagenet', include_top = False, 
                input_shape =(32,32, 3)) 
 resnet.trainable = False
@@ -46,6 +47,8 @@ model.fit(x_train,y_train, epochs = 5, validation_data = (x_test,y_test))
 test_loss, test_accuracy = model.evaluate(x_test, y_test)
 print("Test accuracy: {}".format(test_accuracy))
 
+
+# loading vgg16 model
 vgg16 = VGG16(weights="imagenet", include_top=False, input_shape=(32,32, 3))
 vgg16.trainable = False
 
@@ -72,6 +75,8 @@ model.fit(x_train,y_train, epochs = 5, validation_data = (x_test,y_test))
 test_loss, test_accuracy = model.evaluate(x_test, y_test)
 print("Test accuracy: {}".format(test_accuracy))
 
+
+# loading densnet121 model
 den121 = DenseNet121(weights ='imagenet', include_top = False, 
                input_shape =(32,32, 3)) 
 den121.trainable = False
