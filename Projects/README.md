@@ -15,4 +15,5 @@ Build a web app to recognise objects from images using tensorflow and flask API.
 
 ## Submissions
 1. Dr.Strange (embed github url)
+2. Faris Mohamed ([repo](https://github.com/faris-mohamed10/ai-bootcamp-project))
 
