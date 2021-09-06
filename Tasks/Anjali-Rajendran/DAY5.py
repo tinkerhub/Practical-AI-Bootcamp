@@ -45,7 +45,7 @@ model.compile(
     metrics=[tf.keras.metrics.SparseCategoricalAccuracy()],
 )
 earlystop_callback = EarlyStopping(
-  monitor='val_accuracy', min_delta=0, patience=3)
+  monitor='val_loss', min_delta=0.001, patience=3)
 
 model.fit(ds_train, epochs=20, validation_data=ds_test, callbacks=[earlystop_callback])
 model.evaluate(ds_test)
