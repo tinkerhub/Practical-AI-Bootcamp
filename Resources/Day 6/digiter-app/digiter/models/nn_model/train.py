@@ -1,22 +1,14 @@
-from tensorflow.keras import layers
-from tensorflow.keras import models
+import os
 import tensorflow_datasets as tfds
-from tensorflow.keras.datasets import mnist
 from tensorflow.keras.utils import to_categorical
 import tensorflow as tf
 import matplotlib.pyplot as plt
 from tensorflow.keras.callbacks import EarlyStopping
-
-import math
-
 import tensorflow.keras.backend as K
 import numpy as np
+from digiter.utils.lrfinder import LRFinder
 
-from tensorflow.keras.callbacks import LambdaCallback
-
-
-from lrfinder import LRFinder
-
+MODEL_PATH = os.environ.get("MODEL_PATH")
 
 
 (ds_train, ds_test), ds_info = tfds.load(
@@ -83,3 +75,5 @@ earlystop_callback = EarlyStopping(
     monitor='val_loss', min_delta=0, patience=5)
 
 history = model.fit(ds_train, epochs=10, validation_data=ds_test, callbacks=[earlystop_callback])
+
+model.save(MODEL_PATH)

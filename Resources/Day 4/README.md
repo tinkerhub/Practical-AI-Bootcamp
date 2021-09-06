@@ -24,82 +24,80 @@
 Import packages
 
 ```python
+import tensorflow_datasets as tfds
+from tensorflow.keras.utils import to_categorical
 import tensorflow as tf
-from tensorflow_datasets import tfds
+import matplotlib.pyplot as plt
+from tensorflow.keras.callbacks import EarlyStopping
+import tensorflow.keras.backend as K
 import numpy as np
-from tensorflow.keras.preprocessing.text import Tokenizer
-from tensorflow.keras.preprocessing.sequence import pad_sequences
 from lrfinder import LRFinder
+
 ```
 
 Loading dataset
 
 ```python
-imdb, info = tfds.load("imdb_reviews", with_info=True, as_supervised=True)
-train_data, test_data = imdb['train'], imdb['test']
-
-training_sentences = []
-training_labels = []
-
-testing_sentences = []
-testing_labels = []
-
-for s,l in train_data:
-  training_sentences.append(str(s.tonumpy()))
-  training_labels.append(l.tonumpy())
-  
-for s,l in test_data:
-  testing_sentences.append(str(s.tonumpy()))
-  testing_labels.append(l.tonumpy())
-  
-training_labels_final = np.array(training_labels)
-testing_labels_final = np.array(testing_labels)
+(ds_train, ds_test), ds_info = tfds.load(
+    'mnist',
+    split=['train', 'test'],
+    shuffle_files=True,
+    as_supervised=True,
+    with_info=True,
+)
 ```
 
-Vocabulary and Tokenization
+Apply preprocessing
 
 ```python
-vocab_size = 10000
-embedding_dim = 16
-max_length = 120
-trunc_type='post'
-oov_tok = ""
+def normalize_img(image, label):
+  """Normalizes images: `uint8` -> `float32`."""
+  return tf.cast(image, tf.float32) / 255., label
 
-tokenizer = Tokenizer(num_words = vocab_size, oov_token=oov_tok) 
-tokenizer.fit_on_texts(training_sentences) 
-word_index = tokenizer.word_index
-sequences = tokenizer.texts_to_sequences(training_sentences) 
-padded = pad_sequences(sequences,maxlen=max_length, truncating=trunc_type)
-testing_sequences = tokenizer.texts_to_sequences(testing_sentences)
-testing_padded = pad_sequences(testing_sequences,maxlen=max_length)
+ds_train = ds_train.map(
+    normalize_img, num_parallel_calls=tf.data.experimental.AUTOTUNE)
+ds_train = ds_train.cache()
+ds_train = ds_train.shuffle(ds_info.splits['train'].num_examples)
+ds_train = ds_train.batch(128)
+ds_train = ds_train.prefetch(tf.data.experimental.AUTOTUNE)
+
+ds_test = ds_test.map(
+    normalize_img, num_parallel_calls=tf.data.experimental.AUTOTUNE)
+ds_test = ds_test.batch(128)
+ds_test = ds_test.cache()
+ds_test = ds_test.prefetch(tf.data.experimental.AUTOTUNE)
 ```
 
 Create the model
 
 ```python
-model = tf.keras.Sequential([
-    tf.keras.layers.Embedding(vocab_size, embedding_dim, input_length=max_length),
-    tf.keras.layers.Bidirectional(tf.keras.layers.GRU(32)),
-    tf.keras.layers.Dense(6, activation='relu'),
-    tf.keras.layers.Dense(1, activation='sigmoid')
+model = tf.keras.models.Sequential([
+  tf.keras.layers.Flatten(input_shape=(28, 28)),
+  tf.keras.layers.Dense(128,activation='relu'),
+  tf.keras.layers.Dense(10)
 ])
-model.compile(loss='binary_crossentropy',optimizer='adam',metrics=['accuracy'])
+model.compile(
+    optimizer=tf.keras.optimizers.Adam(0.001),
+    loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+    metrics=[tf.keras.metrics.SparseCategoricalAccuracy()],
+)
 ```
 
 Find learning rate
 
 ```python
-BATCH = 512
-train_ds = tf.data.Dataset.from_tensor_slices((padded, training_labels_final))
-train_ds = train_ds.batch(BATCH)
-STEPS_PER_EPOCH = np.ceil(len(train_data) / BATCH)
+BATCH = 128
+
 lr_finder = LRFinder(model)
-lr_finder.find(train_ds, start_lr=1e-6, end_lr=1, epochs=5,
+STEPS_PER_EPOCH = np.ceil(len(ds_train) / BATCH)
+lr_finder.find(ds_train, start_lr=1e-6, end_lr=1, epochs=5,
                steps_per_epoch=STEPS_PER_EPOCH)
-               
 learning_rates = lr_finder.get_learning_rates()
 losses = lr_finder.get_losses()
+```
 
+Plotting best LR 
+```python
 def plot_loss(learning_rates, losses, n_skip_beginning=10, n_skip_end=5, x_scale='log'):
     f, ax = plt.subplots()
     ax.set_ylabel("loss")
@@ -115,7 +113,7 @@ axs.axvline(x=lr_finder.get_best_lr(sma=20), c='r', linestyle='-.')
 
 ## The plot looks like this
 
-![learning rate](https://github.com/tinkerhub/Practical-AI-Bootcamp/blob/main/Resources/Day%204/Screenshot%202021-08-28%20at%209.04.15%20PM.png)
+![learning rate](https://github.com/tinkerhub/Practical-AI-Bootcamp/blob/main/Resources/Day%204/lr_finder.png)
 
 
 Lets get the best learning rate and set it as model learning rate
@@ -142,13 +140,43 @@ print(model.optmizer.lr)
 from tensorflow.keras.callbacks import EarlyStopping
 
 earlystop_callback = EarlyStopping(
-  monitor='val_accuracy', min_delta=0.0001, patiece=1)
+  monitor='val_accuracy', min_delta=0, patiece=5)
 ```
 
 When you do the `model.fit()` pass `earlystop_callback` as param 
 
 ```python
-model.fit(padded, training_labels_final, epochs=num_epochs, validation_data=(testing_padded, testing_labels_final), callbacks=[earlystop_callback])
-model.evaluate(testing_padded)
+model.fit(ds_train, epochs=num_epochs, validation_data=ds_test, callbacks=[earlystop_callback])
+model.evaluate(ds_test)
 ```
 
+What values of `min_delta` and  `patience` to use ?
+
+- If dataset doesn't contain large variations use larger patience
+- If on CPU use small patience, on GPU use large patience
+- For models like GAN it might be better to use small patience and save model checkpoints
+- Set min delta based on running few epochs and checking validation loss
+
+# Save and load models
+
+Use `model.save` for saving a full model
+
+```python
+model.save('saved_model/model')
+```
+
+Method for loading model and doing prediction
+
+```python
+model = tf.keras.models.load_model('saved_model/model')
+
+def predict(image, model=model):
+    img = tf.keras.preprocessing.image.load_img(
+        image, target_size=(28, 28), color_mode='grayscale')
+    img = tf.keras.preprocessing.image.img_to_array(img)
+    img = tf.expand_dims(img, 0)
+    pred = model.predict(img)
+    score = tf.nn.softmax(pred[0])
+    return np.argmax(score)
+
+```
