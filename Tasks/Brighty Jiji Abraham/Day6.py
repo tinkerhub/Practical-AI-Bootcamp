@@ -19,6 +19,8 @@ x_train.shape
 x_test=x_test/255.0
 x_test.shape
 
+
+# Loading ResNet50 pre-trained model
 resnet = ResNet50(weights ='imagenet', include_top = False, 
                input_shape =(32,32, 3)) 
 resnet.trainable = False
@@ -34,7 +36,6 @@ x = Dense(512, activation ='relu')(x)
 x = BatchNormalization()(x)
 x = Dropout(0.5)(x)
 
-
 x = Dense(10, activation ='softmax')(x)
 
 model = Model(resnet.input, x)
@@ -46,6 +47,8 @@ model.fit(x_train,y_train, epochs = 5, validation_data = (x_test,y_test))
 test_loss, test_accuracy = model.evaluate(x_test, y_test)
 print("Test accuracy: {}".format(test_accuracy))
 
+
+# Loading VGG16 pre-trained model
 vgg16 = VGG16(weights="imagenet", include_top=False, input_shape=(32,32, 3))
 vgg16.trainable = False
 
@@ -60,7 +63,6 @@ x = Dense(512, activation ='relu')(x)
 x = BatchNormalization()(x)
 x = Dropout(0.5)(x)
 
-
 x = Dense(10, activation ='softmax')(x)
 
 model = Model(vgg16.input, x)
@@ -72,6 +74,8 @@ model.fit(x_train,y_train, epochs = 5, validation_data = (x_test,y_test))
 test_loss, test_accuracy = model.evaluate(x_test, y_test)
 print("Test accuracy: {}".format(test_accuracy))
 
+
+# Loading DenseNet121 pre-trained model
 den121 = DenseNet121(weights ='imagenet', include_top = False, 
                input_shape =(32,32, 3)) 
 den121.trainable = False
@@ -86,7 +90,6 @@ x = Dropout(0.5)(x)
 x = Dense(512, activation ='relu')(x)
 x = BatchNormalization()(x)
 x = Dropout(0.5)(x)
-
 
 x = Dense(10, activation ='softmax')(x)
 
