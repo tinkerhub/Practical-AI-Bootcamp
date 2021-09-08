@@ -1,8 +1,19 @@
 from keras.layers import Input, Lambda, Dense, Flatten
 from tensorflow.keras import datasets,layers,models
 from keras.models import Model
+
 from keras.applications.vgg16 import VGG16
-# from keras.applications.vgg16 import preprocess_input
+from keras.applications.vgg16 import preprocess_input
+
+# from keras.applications.resnet50 import ResNet50
+# from keras.applications.resnet50 import preprocess_input
+
+# from keras.applications.inception_v3 import InceptionV3
+# from keras.applications.inception_v3 import preprocess_input
+
+
+
+
 from keras.preprocessing import image
 # from keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.utils import to_categorical
@@ -12,6 +23,8 @@ import matplotlib.pyplot as plt
 
 (trainX, trainY),(testX,testY)=datasets.cifar10.load_data()
 vgg = VGG16(input_shape=[32,32,3], weights='imagenet', include_top=False)
+# resnet50 = ResNet50(input_shape=[32,32,3], weights='imagenet', include_top=False)
+# inceptionv3= InceptionV3(input_shape=[32,32,3], weights='imagenet', include_top=False)
 
 for layers in vgg.layers:
   layers.trainable=False
