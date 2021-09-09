@@ -1,4 +1,4 @@
-from digiter.models.nn_model.predict import predict
+from digiter.models.cnn_model.predict import predict
 from digiter.utils.image import decode_image
 
 def get_digit(image):

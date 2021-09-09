@@ -1,4 +1,4 @@
-model = tf.keras.models.load_model('saved_model/model')
+model = tf.keras.models.load_model('saved_model/cnn_model.h5')
 
 def predict(image, model=model):
     img = tf.keras.preprocessing.image.load_img(
