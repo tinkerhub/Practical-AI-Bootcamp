@@ -15,4 +15,4 @@ Build a web app to recognise objects from images using tensorflow and flask API.
 
 ## Submissions
 1. Dr.Strange (embed github url)
-
+2. [Mask-or-not](https://github.com/kiransbaliga/Mask-or-Not) by Kiran S Baliga
