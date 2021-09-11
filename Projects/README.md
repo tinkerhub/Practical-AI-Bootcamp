@@ -15,4 +15,5 @@ Build a web app to recognise objects from images using tensorflow and flask API.
 
 ## Submissions
 1. Dr.Strange (embed github url)
+2. Nanda Kishor M Pai ([Project Repo](https://github.com/nandakishormpai/Tensorflow_Image_Detection_Web_app))
 
