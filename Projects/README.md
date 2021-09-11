@@ -15,4 +15,4 @@ Build a web app to recognise objects from images using tensorflow and flask API.
 
 ## Submissions
 1. Dr.Strange (embed github url)
-
+2. Rikin (https://github.com/dfx-rick/final_project_ship_or_truck.git)
