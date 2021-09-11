@@ -15,4 +15,5 @@ Build a web app to recognise objects from images using tensorflow and flask API.
 
 ## Submissions
 1. Dr.Strange (embed github url)
+2. Anandhakrishnan M https://github.com/anandhu013/Mask_Detection
 
