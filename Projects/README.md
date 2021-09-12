@@ -15,4 +15,4 @@ Build a web app to recognise objects from images using tensorflow and flask API.
 
 ## Submissions
 1. Dr.Strange (embed github url)
-
+2. Aylin Mariam Johns [repo](https://github.com/Aylin-19-Johns/CIFAR-10_classifier)
