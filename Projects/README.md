@@ -15,4 +15,4 @@ Build a web app to recognise objects from images using tensorflow and flask API.
 
 ## Submissions
 1. Dr.Strange (embed github url)
-2. Anjali Rajendran ([repo]) (https://github.com/AnjaliRaj015/cifaardata)
+2. Anjali Rajendran [repo](https://github.com/AnjaliRaj015/cifaardata)
