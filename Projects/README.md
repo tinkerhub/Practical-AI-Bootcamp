@@ -15,4 +15,4 @@ Build a web app to recognise objects from images using tensorflow and flask API.
 
 ## Submissions
 1. Dr.Strange (embed github url)
-
+2. Adithya Kurien Peter ([Cifar-100 image classification](https://github.com/aaadddiii/AI-Bootcamp-Project))
