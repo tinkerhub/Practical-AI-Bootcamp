@@ -22,3 +22,4 @@ Build a web app to recognise objects from images using tensorflow and flask API.
 5. [Mask-or-not](https://github.com/kiransbaliga/Mask-or-Not) by Kiran S Baliga
 6. Hari Krishnan U ([Project](https://github.com/Harikrishnan6336/CIFAR-10__Image-Classifier))
 7. Adithya Kurien Peter ([Cifar-100 image classification](https://github.com/aaadddiii/AI-Bootcamp-Project))
+8. [Abhinav Sathyan](https://github.com/AbhinavSathyan/Practical_AI_Project)
