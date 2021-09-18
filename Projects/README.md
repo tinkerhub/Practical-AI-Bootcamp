@@ -26,3 +26,4 @@ Build a web app to recognise objects from images using tensorflow and flask API.
 9. [Ahinav](https://github.com/abhinav-TB/Object-detection-API)
 10. [Lija Alex](https://github.com/LijaAlex12/Lija-AI-Final-Project)
 11. [Rikin](https://github.com/dfx-rick/final_project_ship_or_truck.git)
+12. [Brighty Jiji Abraham](https://github.com/BrightyJijiAbraham/CIFAR-10-_CLASSIFIER)
