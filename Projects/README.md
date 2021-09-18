@@ -16,10 +16,11 @@ Build a web app to recognise objects from images using tensorflow and flask API.
 ## Submissions
 
 1. Dr.Strange (embed github url)
-2. Amrutha M [repo](https://github.com/amruthaaji05/cifar-10_classifier)
-3. Aylin Mariam Johns [repo](https://github.com/Aylin-19-Johns/CIFAR-10_classifier)
-4. Sabique (https://github.com/mhdsbq/Object-Detector)
-5. [Mask-or-not](https://github.com/kiransbaliga/Mask-or-Not) by Kiran S Baliga
-6. Hari Krishnan U ([Project](https://github.com/Harikrishnan6336/CIFAR-10__Image-Classifier))
-7. Adithya Kurien Peter ([Cifar-100 image classification](https://github.com/aaadddiii/AI-Bootcamp-Project))
+2. [Amrutha M](https://github.com/amruthaaji05/cifar-10_classifier)
+3. [Aylin Mariam Johns](https://github.com/Aylin-19-Johns/CIFAR-10_classifier)
+4. [Sabique](https://github.com/mhdsbq/Object-Detector)
+5. [Kiran S Baliga](https://github.com/kiransbaliga/Mask-or-Not)
+6. [Hari Krishnan U](https://github.com/Harikrishnan6336/CIFAR-10__Image-Classifier)
+7. [Adithya Kurien Peter]((https://github.com/aaadddiii/AI-Bootcamp-Project)
 8. [Abhinav Sathyan](https://github.com/AbhinavSathyan/Practical_AI_Project)
+9. [Ahinav](https://github.com/abhinav-TB/Object-detection-API)
