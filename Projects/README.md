@@ -30,3 +30,4 @@ Build a web app to recognise objects from images using tensorflow and flask API.
 13. [Anjali Rajendran](https://github.com/AnjaliRaj015/cifaardata)
 14. [Nanda Kishor M Pai](https://github.com/nandakishormpai/Tensorflow_Image_Detection_Web_app)
 15. [Anandhakrishnan M](https://github.com/anandhu013/Mask_Detection)
+16. [Faris Mohamed](https://github.com/faris-mohamed10/ai-bootcamp-project)
