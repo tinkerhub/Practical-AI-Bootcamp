@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    margin-top:10px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background: #5256ad;
+}
+.header-area h1{
+    font-size: 25px;
+    font-weight: 500;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+.header-area p{
+    color: #2E3061;
+    display: flex;
+    justify-content: center;
+}
+.drag-area{
+    margin-top: 10px;
+    border: 2px dashed #fff;
+    height: 250px;
+    width: 350px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    cursor:pointer;
+}
+.drag-area.active{
+    border: 2px solid #fff;
+}
+.drag-area .icon{
+    font-size: 50px;
+    color: #fff;
+}
+.drag-area header{
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+}
+.drag-area span{
+    font-size: 25px;
+    font-weight: 500;
+    color: #fff;
+    margin: 10px 0 15px 0;
+}
+
+.drag-area img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.btn{
+    padding: 5px 13px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: #fff;
+    color: #5256ad;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.predict-area{
+    /* height: 500px;  */
+    /* width: 700px; */
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.result-area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.result-area h3{
+    margin-top: 10px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}

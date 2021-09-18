@@ -1,0 +1,4 @@
+tensorflow
+tensorflow_text
+tensorflow-datasets
+tensorflow-hub
