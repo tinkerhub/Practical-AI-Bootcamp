@@ -21,7 +21,7 @@ Build a web app to recognise objects from images using tensorflow and flask API.
 4. [Sabique](https://github.com/mhdsbq/Object-Detector)
 5. [Kiran S Baliga](https://github.com/kiransbaliga/Mask-or-Not)
 6. [Hari Krishnan U](https://github.com/Harikrishnan6336/CIFAR-10__Image-Classifier)
-7. [Adithya Kurien Peter]((https://github.com/aaadddiii/AI-Bootcamp-Project)
+7. [Adithya Kurien Peter](https://github.com/aaadddiii/AI-Bootcamp-Project)
 8. [Abhinav Sathyan](https://github.com/AbhinavSathyan/Practical_AI_Project)
 9. [Ahinav](https://github.com/abhinav-TB/Object-detection-API)
 10. [Lija Alex](https://github.com/LijaAlex12/Lija-AI-Final-Project)
